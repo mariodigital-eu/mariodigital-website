@@ -1,0 +1,36 @@
+# Publiceert de map "site/" automatisch naar de Mijndomein-hosting (Plesk, map httpdocs)
+# zodra er iets in site/ verandert op de main-branch.
+# Benodigde Secrets (Settings -> Secrets and variables -> Actions):
+#   FTP_SERVER    bijv. de FTP-hostnaam uit Plesk
+#   FTP_USERNAME  FTP-gebruikersnaam uit Plesk
+#   FTP_PASSWORD  FTP-wachtwoord uit Plesk
+name: Website publiceren
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload via FTP naar Mijndomein
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./site/
+          server-dir: /httpdocs/
+          # Verwijdert nooit bestanden die niet via GitHub zijn geplaatst
+          dangerous-clean-slate: false

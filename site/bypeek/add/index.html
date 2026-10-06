@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ByPeek – meekijken met je gezin</title>
+<style>
+  :root { --bg:#F5F8FC; --card:#FFFFFF; --text:#0B1B3A; --muted:#5B6475; --accent:#0E93C4; --btn:#0B1430; --btnText:#FFFFFF; --line:#E3E8EF; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0B1430; --card:#132A5C; --text:#F4F8FF; --muted:#A0A8B8; --accent:#38BDF8; --btn:#38BDF8; --btnText:#0B1430; --line:#22386B; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width:440px; margin:0 auto; padding:32px 16px 48px; }
+  .head { text-align:center; margin-bottom:24px; }
+  .head svg { border-radius:22px; box-shadow:0 6px 24px rgba(11,20,48,.25); }
+  h1 { font-size:26px; margin:16px 0 4px; }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; margin:16px 0; }
+  .step { font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; }
+  h2 { font-size:18px; margin:4px 0 8px; }
+  p { margin:0 0 12px; }
+  .btn { display:block; width:100%; text-align:center; text-decoration:none; font-weight:700; padding:14px 16px; border-radius:12px; background:var(--btn); color:var(--btnText); margin-top:8px; border:0; font-size:16px; cursor:pointer; }
+  .btn.alt { background:transparent; color:var(--text); border:2px solid var(--line); }
+  .note { font-size:13px; color:var(--muted); }
+  .hidden { display:none; }
+  footer { text-align:center; font-size:13px; color:var(--muted); margin-top:24px; }
+  footer b span { color:var(--accent); }
+  footer a.brand { color:inherit; text-decoration:none; }
+  footer a.brand:hover b { text-decoration:underline; }
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="96" height="96" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#132A5C"/><stop offset="1" stop-color="#0B1430"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#bg)"/><g transform="translate(512,512) scale(1.12) translate(-512,-552)">
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#0E93C4"/>
+    </linearGradient>
+    <clipPath id="aboveCard"><rect x="0" y="0" width="1024" height="468"/></clipPath>
+  </defs>
+  <!-- oog: alleen de bovenkant steekt boven de kaart uit -->
+  <g clip-path="url(#aboveCard)">
+    <path d="M292,468 Q512,238 732,468 Q512,698 292,468 Z" fill="#F4F8FF"/>
+    <circle cx="512" cy="452" r="92" fill="#0E93C4"/>
+    <circle cx="512" cy="452" r="44" fill="#0B1430"/>
+    <circle cx="540" cy="424" r="17" fill="#FFFFFF"/>
+    <path d="M292,468 Q512,238 732,468" fill="none" stroke="#F4F8FF" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
+  </g>
+  <!-- kaart -->
+  <rect x="176" y="462" width="672" height="404" rx="54" fill="url(#card)"/>
+  <!-- chip -->
+  <rect x="244" y="560" width="128" height="96" rx="18" fill="#E6EEF9"/>
+  <path d="M244,592 H300 M316,592 H372 M244,624 H300 M316,624 H372 M308,560 V656"
+        stroke="#9FB3CF" stroke-width="7" fill="none"/>
+  <!-- verborgen kaartnummer -->
+  <g fill="#0B1430" opacity="0.85">
+    <circle cx="252" cy="760" r="11"/><circle cx="286" cy="760" r="11"/><circle cx="320" cy="760" r="11"/><circle cx="354" cy="760" r="11"/><circle cx="432" cy="760" r="11"/><circle cx="466" cy="760" r="11"/><circle cx="500" cy="760" r="11"/><circle cx="534" cy="760" r="11"/><circle cx="612" cy="760" r="11"/><circle cx="646" cy="760" r="11"/><circle cx="680" cy="760" r="11"/><circle cx="714" cy="760" r="11"/>
+  </g>
+</g></svg>
+    <h1>ByPeek</h1>
+    <p class="sub" data-t="tagline"></p>
+  </div>
+
+  <div id="invite" class="hidden">
+    <div class="card">
+      <p id="inviteText"></p>
+    </div>
+
+    <div class="card">
+      <div class="step" data-t="step1"></div>
+      <h2 data-t="installTitle"></h2>
+      <p class="note" data-t="installNote"></p>
+      <a id="play" class="btn" href="#" data-t="play"></a>
+      <a id="appstore" class="btn alt" href="#" data-t="appstore"></a>
+      <p id="iosSoon" class="note hidden" data-t="iosSoon"></p>
+    </div>
+
+    <div class="card">
+      <div class="step" data-t="step2"></div>
+      <h2 data-t="openTitle"></h2>
+      <p class="note" data-t="openNote"></p>
+      <a id="open" class="btn" href="#" data-t="open"></a>
+    </div>
+
+    <p class="note" data-t="privacy"></p>
+  </div>
+
+  <div id="plain" class="hidden">
+    <div class="card">
+      <p data-t="plainText"></p>
+      <a id="play2" class="btn" href="#" data-t="play"></a>
+    </div>
+  </div>
+
+  <footer><span data-t="madeBy"></span> <a href="https://www.mariodigital.eu" class="brand"><b>Mario<span>Digital</span></b></a></footer>
+</main>
+
+<script>
+(function () {
+  // Vul in zodra ByPeek in de App Store staat (bijv. https://apps.apple.com/app/id1234567890).
+  var APP_STORE_URL = '';
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=eu.mariodigital.bypeek';
+
+  var T = {
+    nl: {
+      tagline: 'Je Bybit-kaartsaldo in één tik',
+      invite: 'Een gezinslid wil het kaartsaldo met je delen. Meekijken is gratis.',
+      inviteNamed: 'Een gezinslid wil het kaartsaldo van “{name}” met je delen. Meekijken is gratis.',
+      step1: 'Stap 1', installTitle: 'Installeer ByPeek',
+      installNote: 'Heb je ByPeek al? Sla deze stap dan over.',
+      play: 'Downloaden in Google Play', appstore: 'Downloaden in de App Store',
+      iosSoon: 'ByPeek voor iPhone komt binnenkort.',
+      step2: 'Stap 2', openTitle: 'Open ByPeek met dit account',
+      openNote: 'Tik hierop als ByPeek geïnstalleerd is. Het account wordt dan vanzelf ingevuld.',
+      open: 'ByPeek openen',
+      privacy: 'De gegevens in deze link blijven in je browser en worden niet naar onze server gestuurd.',
+      plainText: 'ByPeek toont het saldo van je Bybit-kaart, zonder de Bybit-app.',
+      encrypted: 'Deze code is versleuteld en alleen te lezen met ByPeek. Installeer ByPeek en open de code daarna opnieuw, of tik op “ByPeek openen”.',
+      madeBy: 'Een app van'
+    },
+    en: {
+      tagline: 'Your Bybit card balance in one tap',
+      invite: 'A family member wants to share their card balance with you. Viewing is free.',
+      inviteNamed: 'A family member wants to share the card balance of “{name}” with you. Viewing is free.',
+      step1: 'Step 1', installTitle: 'Install ByPeek',
+      installNote: 'Already have ByPeek? Skip this step.',
+      play: 'Get it on Google Play', appstore: 'Download on the App Store',
+      iosSoon: 'ByPeek for iPhone is coming soon.',
+      step2: 'Step 2', openTitle: 'Open ByPeek with this account',
+      openNote: 'Tap this once ByPeek is installed. The account will be filled in for you.',
+      open: 'Open ByPeek',
+      privacy: 'The details in this link stay in your browser and are not sent to our server.',
+      plainText: 'ByPeek shows the balance of your Bybit card, without the Bybit app.',
+      encrypted: 'This code is encrypted and can only be read by ByPeek. Install ByPeek and open the code again, or tap “Open ByPeek”.',
+      madeBy: 'An app by'
+    }
+  };
+  var lang = (navigator.language || 'en').toLowerCase().indexOf('nl') === 0 ? 'nl' : 'en';
+  var t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')]; });
+
+  // Alles na de '#': wordt door de browser nooit naar de server gestuurd.
+  var hash = location.hash.replace(/^#/, '');
+  var params = new URLSearchParams(hash);
+  // Versie 2: alles versleuteld in 'x' (alleen ByPeek kan het lezen).
+  // Versie 1 (oud): losse velden k, s en g.
+  var valid = params.get('x') || (params.get('k') && params.get('s') && params.get('g'));
+
+  var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var isAndroid = /Android/i.test(navigator.userAgent);
+
+  function setupStores(playId) {
+    var play = document.getElementById(playId);
+    play.href = PLAY_URL;
+    if (isIOS) play.classList.add('hidden');
+    return play;
+  }
+
+  if (!valid) {
+    document.getElementById('plain').classList.remove('hidden');
+    setupStores('play2');
+    return;
+  }
+
+  document.getElementById('invite').classList.remove('hidden');
+  var name = params.get('l');
+  document.getElementById('inviteText').textContent =
+    (name ? t.inviteNamed.replace('{name}', name) : t.invite) +
+    (params.get('x') ? ' ' + t.encrypted : '');
+
+  var appLink = 'bypeek://account?' + hash;
+
+  // Vangnet: code op het klembord zetten, zodat ByPeek hem na installatie vindt.
+  function copyCode() {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(appLink); } catch (e) {}
+  }
+
+  var play = setupStores('play');
+  play.addEventListener('click', copyCode);
+
+  var appstore = document.getElementById('appstore');
+  if (APP_STORE_URL) {
+    appstore.href = APP_STORE_URL;
+    appstore.addEventListener('click', copyCode);
+    if (isAndroid) appstore.classList.add('hidden');
+  } else {
+    appstore.classList.add('hidden');
+    if (isIOS) document.getElementById('iosSoon').classList.remove('hidden');
+  }
+
+  document.getElementById('open').href = appLink;
+})();
+</script>
+</body>
+</html>

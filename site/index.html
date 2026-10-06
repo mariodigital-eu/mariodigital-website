@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarioDigital — apps voor iOS, Android en Windows</title>
+<meta name="description" content="MarioDigital ontwikkelt, bouwt en publiceert software en apps voor iOS, Android en Windows. Gevestigd in Amsterdam.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0B1B3A;
+    --muted: #5b6475;
+    --accent: #0E93C4;
+    --line: #e4e8ee;
+    --card: #f6f8fb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .bar { height: 4px; background: var(--accent); }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 12vh 24px 48px;
+  }
+  .logo { width: min(340px, 80%); height: auto; display: block; margin-left: -2%; }
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    line-height: 1.2;
+    margin: 48px 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 34em; }
+  .label {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  .apps { margin-top: 48px; }
+  .app {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .app-icon { flex: none; border-radius: 13px; box-shadow: 0 3px 10px rgba(11,20,48,.2); }
+  .app h3 { font-size: 1.15rem; line-height: 1.3; }
+  .app p { color: var(--muted); }
+  .app .meta { font-size: .9rem; margin-top: 6px; }
+  .app .meta a { color: var(--accent); }
+  .badge {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: bold;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+  .contact {
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+  }
+  .contact .label { margin-bottom: 8px; }
+  .contact a {
+    color: var(--accent);
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .contact a:hover { text-decoration: underline; }
+  footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer .inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 24px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+  footer strong { color: var(--ink); }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <main>
+    <img class="logo" src="logo.svg" alt="MarioDigital">
+
+    <h1>Apps voor iOS, Android en Windows.</h1>
+    <p class="lead">MarioDigital ontwikkelt, bouwt en publiceert software en mobiele en desktop-applicaties. Van idee tot publicatie in de App Store, Google Play en de Microsoft Store.</p>
+
+    <section class="apps">
+      <h2 class="label">Onze apps</h2>
+      <div class="app">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="app-icon" width="56" height="56" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#132A5C"/><stop offset="1" stop-color="#0B1430"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#bg)"/><g transform="translate(512,512) scale(1.12) translate(-512,-552)">
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#0E93C4"/>
+    </linearGradient>
+    <clipPath id="aboveCard"><rect x="0" y="0" width="1024" height="468"/></clipPath>
+  </defs>
+  <g clip-path="url(#aboveCard)">
+    <path d="M292,468 Q512,238 732,468 Q512,698 292,468 Z" fill="#F4F8FF"/>
+    <circle cx="512" cy="452" r="92" fill="#0E93C4"/>
+    <circle cx="512" cy="452" r="44" fill="#0B1430"/>
+    <circle cx="540" cy="424" r="17" fill="#FFFFFF"/>
+    <path d="M292,468 Q512,238 732,468" fill="none" stroke="#F4F8FF" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
+  </g>
+  <rect x="176" y="462" width="672" height="404" rx="54" fill="url(#card)"/>
+  <rect x="244" y="560" width="128" height="96" rx="18" fill="#E6EEF9"/>
+  <path d="M244,592 H300 M316,592 H372 M244,624 H300 M316,624 H372 M308,560 V656"
+        stroke="#9FB3CF" stroke-width="7" fill="none"/>
+  <g fill="#0B1430" opacity="0.85">
+    <circle cx="252" cy="760" r="11"/><circle cx="286" cy="760" r="11"/><circle cx="320" cy="760" r="11"/><circle cx="354" cy="760" r="11"/><circle cx="432" cy="760" r="11"/><circle cx="466" cy="760" r="11"/><circle cx="500" cy="760" r="11"/><circle cx="534" cy="760" r="11"/><circle cx="612" cy="760" r="11"/><circle cx="646" cy="760" r="11"/><circle cx="680" cy="760" r="11"/><circle cx="714" cy="760" r="11"/>
+  </g>
+</g></svg>
+        <div>
+          <h3>ByPeek <span class="badge">Binnenkort</span></h3>
+          <p>Je Bybit-kaartsaldo in één tik, als widget op je startscherm. Voor Android en iPhone.</p>
+          <p class="meta"><a href="bypeek/privacy/">Privacyverklaring ByPeek</a> · ByPeek is niet verbonden aan Bybit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2 class="label">Contact</h2>
+      <a href="mailto:support@mariodigital.eu">support@mariodigital.eu</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <span><strong>MarioDigital</strong></span>
+      <span>Le Mairekade 77, 1013 CB Amsterdam</span>
+      <span>KVK 42161876</span>
+      <span>Btw-id NL005546636B41</span>
+      <span><a href="privacy.html">Privacyverklaring</a></span>
+    </div>
+  </footer>
+</body>
+</html>

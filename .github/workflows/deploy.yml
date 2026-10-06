@@ -1,8 +1,8 @@
 # Publiceert de map "site/" automatisch naar de Mijndomein-hosting (Plesk, map httpdocs)
 # zodra er iets in site/ verandert op de main-branch.
 # Benodigde Secrets (Settings -> Secrets and variables -> Actions):
-#   FTP_SERVER    bijv. de FTP-hostnaam uit Plesk
-#   FTP_USERNAME  FTP-gebruikersnaam uit Plesk
+#   FTP_SERVER    server088.mijndomeinhosting.nl
+#   FTP_USERNAME  apart FTP-account met startmap /httpdocs
 #   FTP_PASSWORD  FTP-wachtwoord uit Plesk
 name: Website publiceren
 
@@ -31,6 +31,6 @@ jobs:
           protocol: ftps
           security: loose
           local-dir: ./site/
-          server-dir: /httpdocs/
+          server-dir: ./
           # Verwijdert nooit bestanden die niet via GitHub zijn geplaatst
           dangerous-clean-slate: false

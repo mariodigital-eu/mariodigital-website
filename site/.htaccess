@@ -1,0 +1,6 @@
+# www.mariodigital.eu -> mariodigital.eu (permanent, SEO-vriendelijk)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.mariodigital\.eu$ [NC]
+RewriteRule ^(.*)$ https://mariodigital.eu/$1 [R=301,L]
+</IfModule>

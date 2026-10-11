@@ -7,10 +7,10 @@ from playwright.sync_api import sync_playwright
 SITE = pathlib.Path(__file__).resolve().parent.parent / "site"
 OUT = SITE / "downloads"
 LANGS = ["nl", "en", "de", "fr", "es", "it"]
-JOBS = [("privacy.html", None, "mariodigital-privacy-nl.pdf"),
-        ("bypeek/privacy/", "nl", "bypeek-privacy-nl.pdf"),
-        ("bypeek/privacy/", "en", "bypeek-privacy-en.pdf")]
-JOBS += [(f"pinline/privacy/{l}/", None, f"pinline-privacy-{l}.pdf") for l in LANGS]
+# (pagina, PDF-naam): elke pagina heeft alle 6 talen; per taal een eigen PDF
+PAGES = [("privacy.html", "mariodigital-privacy"), ("bypeek/privacy/", "bypeek-privacy"),
+         ("pinline/privacy/", "pinline-privacy")]
+JOBS = [(path, l, f"{name}-{l}.pdf") for path, name in PAGES for l in LANGS]
 
 # Links in de PDF moeten naar de echte site wijzen, niet naar localhost.
 FIX_LINKS = """() => { for (const a of document.querySelectorAll('a[href]')) {
@@ -28,10 +28,9 @@ def main():
         b = p.chromium.launch()
         page = b.new_page(color_scheme="light")
         for path, keep, name in JOBS:
-            page.goto(base + path, wait_until="networkidle")
-            if keep:  # ByPeek: NL en EN staan op één pagina, toon alleen de gekozen taal
-                other = "en" if keep == "nl" else "nl"
-                page.add_style_tag(content=f"#{other}{{display:none!important}}")
+            page.goto(base + path + "#" + keep, wait_until="networkidle")
+            # alle talen staan op één pagina: toon alleen de gekozen taal
+            page.add_style_tag(content=f"main > section:not(#{keep}){{display:none!important}}")
             page.evaluate(FIX_LINKS)
             page.emulate_media(media="print")
             page.pdf(path=str(OUT / name), format="A4", print_background=True,

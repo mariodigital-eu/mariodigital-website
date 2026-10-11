@@ -2,10 +2,14 @@
 # Een regel met "!" vooraan het adres betekent: deze pagina mag NIET bestaan (404).
 https://mariodigital.eu/ | MarioDigital
 https://mariodigital.eu/pinline/nl/ | Houd je plek vast tijdens het lezen
-https://mariodigital.eu/pinline/privacy/nl/ | Privacyverklaring PinLine
+https://mariodigital.eu/pinline/privacy/ | Informativa sulla privacy di PinLine
+https://mariodigital.eu/pinline/privacy/de/ | Datenschutzerklärung PinLine
+https://mariodigital.eu/privacy.html | Política de privacidad de MarioDigital
 https://mariodigital.eu/bypeek/privacy/ | Privacyverklaring ByPeek
+https://mariodigital.eu/bypeek/privacy/ | Politique de confidentialité de ByPeek
 https://www.mariodigital.eu/ | MarioDigital
 !https://mariodigital.eu/pinline/help/nl/
 https://mariodigital.eu/downloads/pinline-privacy-nl.pdf | %PDF
 https://mariodigital.eu/downloads/bypeek-privacy-en.pdf | %PDF
-https://mariodigital.eu/downloads/mariodigital-privacy-nl.pdf | %PDF
+https://mariodigital.eu/downloads/mariodigital-privacy-it.pdf | %PDF
+https://mariodigital.eu/downloads/bypeek-privacy-de.pdf | %PDF

@@ -3,6 +3,8 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.mariodigital\.eu$ [NC]
 RewriteRule ^(.*)$ https://mariodigital.eu/$1 [R=301,L]
+# Oude PinLine-privacyadressen per taal -> één pagina met alle talen
+RewriteRule ^pinline/privacy/(nl|en|de|fr|es|it)/?$ https://mariodigital.eu/pinline/privacy/#$1 [R=301,L,NE]
 </IfModule>
 
 # PDF-versies van de privacyverklaringen: wel downloadbaar, niet apart in Google

@@ -6,3 +6,6 @@ https://mariodigital.eu/pinline/privacy/nl/ | Privacyverklaring PinLine
 https://mariodigital.eu/bypeek/privacy/ | Privacyverklaring ByPeek
 https://www.mariodigital.eu/ | MarioDigital
 !https://mariodigital.eu/pinline/help/nl/
+https://mariodigital.eu/downloads/pinline-privacy-nl.pdf | %PDF
+https://mariodigital.eu/downloads/bypeek-privacy-en.pdf | %PDF
+https://mariodigital.eu/downloads/mariodigital-privacy-nl.pdf | %PDF

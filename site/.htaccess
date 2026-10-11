@@ -4,3 +4,10 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.mariodigital\.eu$ [NC]
 RewriteRule ^(.*)$ https://mariodigital.eu/$1 [R=301,L]
 </IfModule>
+
+# PDF-versies van de privacyverklaringen: wel downloadbaar, niet apart in Google
+<IfModule mod_headers.c>
+<FilesMatch "\.pdf$">
+Header set X-Robots-Tag "noindex"
+</FilesMatch>
+</IfModule>

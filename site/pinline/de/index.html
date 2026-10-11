@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PinLine – behalten Sie beim Lesen Ihre Stelle | MarioDigital</title>
+  <meta name="description" content="PinLine ist eine Linie auf Ihrem Bildschirm, die Sie selbst setzen. Sie bleibt bei der Zeile, die Sie lesen – auch wenn Sie scrollen oder kurz auf den anderen Bildschirm schauen.">
+  <link rel="canonical" href="https://mariodigital.eu/pinline/de/">
+  <link rel="alternate" hreflang="nl" href="https://mariodigital.eu/pinline/nl/">
+  <link rel="alternate" hreflang="en" href="https://mariodigital.eu/pinline/en/">
+  <link rel="alternate" hreflang="de" href="https://mariodigital.eu/pinline/de/">
+  <link rel="alternate" hreflang="fr" href="https://mariodigital.eu/pinline/fr/">
+  <link rel="alternate" hreflang="es" href="https://mariodigital.eu/pinline/es/">
+  <link rel="alternate" hreflang="it" href="https://mariodigital.eu/pinline/it/">
+  <link rel="alternate" hreflang="x-default" href="https://mariodigital.eu/pinline/">
+  <link rel="icon" href="../pinline-icon.png" type="image/png">
+  <style>
+:root{--navy:#0B1B3A;--blue:#1696C8;--ink:#1F2937;--muted:#5A6475;--line:#E5E9F0;--soft:#F3F6FA;--red:#FF3B30}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+header.top img{height:20px;display:block}
+.langs{display:flex;flex-wrap:wrap;gap:6px;font-size:14px}
+.langs a{padding:3px 9px;border-radius:999px;text-decoration:none;color:var(--muted);border:1px solid var(--line)}
+.langs a[aria-current]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hero{display:flex;gap:18px;align-items:center;padding:34px 0 10px}
+.hero img{width:72px;height:72px;border-radius:16px;flex:none}
+.hero h1{margin:0;font-size:34px;line-height:1.15;color:var(--navy)}
+.hero p{margin:4px 0 0;color:var(--muted);font-size:17px}
+.intro{font-size:17px;margin:14px 0 8px}
+.demo{position:relative;margin:22px 0 8px;padding:18px 20px;background:var(--soft);border-radius:12px;color:#9AA3B2}
+.demo .cur{color:var(--ink);font-weight:600}
+.demo .pin{display:flex;align-items:center;margin:2px 0 4px}
+.demo .pin i{width:18px;height:18px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
+.demo .pin b{height:3px;background:var(--red);opacity:.9;flex:1;margin-left:-2px;border-radius:2px}
+nav.toc{margin:22px 0 4px;font-size:15px}
+nav.toc a{margin-right:14px;white-space:nowrap}
+section{padding:20px 0 6px;border-top:1px solid var(--line);margin-top:22px}
+section h2{margin:0 0 12px;color:var(--navy);font-size:22px}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{position:relative;padding-left:40px;margin:0 0 14px}
+ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+dl{margin:0}
+dt{font-weight:600;color:var(--navy);margin-top:14px}
+dd{margin:2px 0 0}
+footer{border-top:1px solid var(--line);margin-top:34px;padding:18px 0 34px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+footer img{height:16px}
+@media (max-width:560px){.hero{flex-direction:column;align-items:flex-start}.hero h1{font-size:28px}}
+
+.cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 6px}
+.badge{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;font-size:15px}
+.btn{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--navy);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--blue)}
+.feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:6px 0 0}
+.feat{background:var(--soft);border-radius:12px;padding:14px 16px}
+.feat h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
+.feat p{margin:0;font-size:15px}
+.note{background:#F4F8FF;border-radius:12px;padding:14px 16px}
+.updated{color:var(--muted);font-size:14px;margin:4px 0 0}
+section h3{margin:16px 0 4px;font-size:17px;color:var(--navy)}
+section p{margin:4px 0 8px}
+section ul{margin:4px 0 8px;padding-left:22px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="https://mariodigital.eu/" aria-label="MarioDigital"><img src="../mariodigital.png" alt="MarioDigital"></a>
+  <nav class="langs" aria-label="Sprache"><a href="../nl/" lang="nl" hreflang="nl">Nederlands</a> <a href="../en/" lang="en" hreflang="en">English</a> <a href="../de/" lang="de" hreflang="de" aria-current="page">Deutsch</a> <a href="../fr/" lang="fr" hreflang="fr">Français</a> <a href="../es/" lang="es" hreflang="es">Español</a> <a href="../it/" lang="it" hreflang="it">Italiano</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <img src="../pinline-icon.png" alt="" width="72" height="72">
+    <div><h1>PinLine</h1><p>Behalten Sie beim Lesen Ihre Stelle</p></div>
+  </div>
+  <p class="intro">PinLine ist eine Linie auf Ihrem Bildschirm, die Sie selbst setzen. Sie bleibt bei der Zeile, die Sie lesen – auch wenn Sie scrollen oder kurz auf den anderen Bildschirm schauen.</p>
+  <div class="cta">
+    <span class="badge">Bald im Microsoft Store</span>
+    <a class="btn" href="../help/de/">Anleitung</a>
+    <a class="btn" href="../privacy/de/">Datenschutz</a>
+  </div>
+  <div class="demo" aria-hidden="true">
+    <div>Es war ein kalter Morgen, als der Generator zum ersten Mal</div>
+    <div class="cur">anlief und die Lastbank langsam die Last übernahm.</div>
+    <div class="pin"><i></i><b></b></div>
+    <div>Alle in der Halle sahen auf das Display, das ruhig anstieg</div>
+  </div>
+  <section><h2>Warum PinLine?</h2><p>Arbeiten Sie mit zwei Bildschirmen? Sie lesen rechts, schauen kurz nach links, und beim Zurückschauen müssen Sie suchen, wo Sie waren. PinLine löst das: eine Linie, die Sie selbst unter Ihre Zeile setzen und die mit dem Text mitgleitet. Schauen Sie zurück, sehen Sie sofort, wo Sie stehen geblieben sind.</p></section>
+  <section><h2>Was PinLine kann</h2><div class="feats"><div class="feat"><h3>An der Seite fixiert oder frei</h3><p>Fixiert gleitet die Linie mit dem Text mit. Frei bleibt sie an derselben Stelle auf dem Bildschirm. Umschalten mit einem Klick auf das Schloss.</p></div><div class="feat"><h3>Für zwei Bildschirme gemacht</h3><p>Funktioniert auf jedem Bildschirm, auch bei unterschiedlicher Skalierung. Ziehen Sie die Linie einfach auf den anderen Bildschirm.</p></div><div class="feat"><h3>Mitlesen</h3><p>Halten Sie die Linie fest und scrollen Sie: Die Linie bleibt stehen, der Text gleitet darunter durch.</p></div><div class="feat"><h3>Zurück zu Ihrer Zeile</h3><p>Zeile aus dem Bild gescrollt? Ein Klick auf ▲ oder ▼, und PinLine scrollt selbst zurück.</p></div><div class="feat"><h3>Lesezeichen mit eigenem Foto</h3><p>Machen Sie aus der Linie einen Streifen mit eigenem Foto, Rand und Text.</p></div><div class="feat"><h3>Alles mit der Maus</h3><p>Keine Tastenkürzel zum Merken. So sanft oder so schnell, wie Sie möchten – mit einem Schieberegler.</p></div></div></section>
+  <section><h2>Ihr Bildschirm bleibt Ihrer</h2><p class="note">PinLine betrachtet nur einen schmalen Streifen rund um die Linie, um Ihre Zeile wiederzufinden. Diese Bilder bleiben im Arbeitsspeicher und werden weder gespeichert noch gesendet. Kein Konto, keine Werbung, keine Statistiken. <a href="../privacy/de/">Datenschutz →</a></p></section>
+  <section><h2>Systemanforderungen</h2><p>Windows 11 oder Windows 10 ab Version 2004. Verfügbar auf Niederländisch, Englisch, Deutsch, Französisch, Spanisch und Italienisch.</p></section>
+</main>
+<footer><div class="wrap">
+  <span>PinLine von</span><a href="https://mariodigital.eu/"><img src="../mariodigital.png" alt="MarioDigital"></a>
+  <span>·</span><a href="../de/">PinLine</a>
+  <span>·</span><a href="../help/de/">Anleitung</a>
+  <span>·</span><a href="../privacy/de/">Datenschutz</a>
+</div></footer>
+</body>
+</html>

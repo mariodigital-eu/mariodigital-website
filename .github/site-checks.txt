@@ -1,0 +1,8 @@
+# Controles na elke publicatie: adres | tekst die op de pagina moet staan
+# Een regel met "!" vooraan het adres betekent: deze pagina mag NIET bestaan (404).
+https://mariodigital.eu/ | MarioDigital
+https://mariodigital.eu/pinline/nl/ | Houd je plek vast tijdens het lezen
+https://mariodigital.eu/pinline/privacy/nl/ | Privacyverklaring PinLine
+https://mariodigital.eu/bypeek/privacy/ | Privacyverklaring ByPeek
+https://www.mariodigital.eu/ | MarioDigital
+!https://mariodigital.eu/pinline/help/nl/

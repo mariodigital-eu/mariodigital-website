@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MarioDigital — apps voor iOS, Android en Windows</title>
+<title>MarioDigital — apps voor telefoon, computer en browser</title>
 <link rel="canonical" href="https://mariodigital.eu/">
-<meta name="description" content="MarioDigital ontwikkelt, bouwt en publiceert software en apps voor iOS, Android en Windows. Gevestigd in Amsterdam.">
+<meta name="description" content="MarioDigital maakt handige apps en tools voor Android, iPhone, Windows, Mac en Chromebook. Eenmalig kopen, geen abonnement. Gevestigd in Amsterdam.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root {
@@ -77,6 +77,12 @@
     margin-left: 6px;
     vertical-align: 2px;
   }
+  .platforms { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip { font-size: .75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; background: var(--card); }
+  .app + .app { border-top: 0; }
+  .app > div { min-width: 0; }
+  .app h3 a { color: var(--ink); text-decoration: none; }
+  .app h3 a:hover { color: var(--accent); }
   .contact {
     margin-top: 40px;
     padding: 24px;
@@ -115,11 +121,20 @@
   <main>
     <img class="logo" src="logo.svg" alt="MarioDigital">
 
-    <h1>Apps voor iOS, Android en Windows.</h1>
-    <p class="lead">MarioDigital ontwikkelt, bouwt en publiceert software en mobiele en desktop-applicaties. Van idee tot publicatie in de App Store, Google Play en de Microsoft Store.</p>
+    <h1>Handige apps voor telefoon, computer en browser.</h1>
+    <p class="lead">MarioDigital maakt kleine tools die één ding goed doen. Voor Android, iPhone, Windows, Mac en Chromebook, te koop in de officiële stores.</p>
 
     <section class="apps">
       <h2 class="label">Onze apps</h2>
+      <div class="app">
+        <a href="pinline/nl/"><img class="app-icon" src="pinline/pinline-icon.png" width="56" height="56" alt="PinLine"></a>
+        <div>
+          <h3><a href="pinline/nl/">PinLine</a> <span class="badge">Binnenkort</span></h3>
+          <p>Een lijn op je scherm die je plek vasthoudt tijdens het lezen. Ontwerp je eigen boekenlegger en maak screenshots met of zonder lijn.</p>
+          <div class="platforms"><span class="chip">Windows</span><span class="chip">Mac · later</span><span class="chip">Chromebook · later</span></div>
+          <p class="meta"><a href="pinline/nl/">Meer over PinLine</a> · <a href="pinline/help/nl/">Handleiding</a> · <a href="pinline/privacy/nl/">Privacy</a></p>
+        </div>
+      </div>
       <div class="app">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="app-icon" width="56" height="56" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#132A5C"/><stop offset="1" stop-color="#0B1430"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#bg)"/><g transform="translate(512,512) scale(1.12) translate(-512,-552)">
   <defs>
@@ -145,7 +160,8 @@
 </g></svg>
         <div>
           <h3>ByPeek <span class="badge">Binnenkort</span></h3>
-          <p>Je Bybit-kaartsaldo in één tik, als widget op je startscherm. Voor Android en iPhone.</p>
+          <p>Je Bybit-kaartsaldo in één tik, als widget op je startscherm.</p>
+          <div class="platforms"><span class="chip">Android</span><span class="chip">iPhone</span></div>
           <p class="meta"><a href="bypeek/privacy/">Privacyverklaring ByPeek</a> · ByPeek is niet verbonden aan Bybit.</p>
         </div>
       </div>

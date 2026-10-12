@@ -13,3 +13,8 @@ https://mariodigital.eu/downloads/pinline-privacy-nl.pdf | %PDF
 https://mariodigital.eu/downloads/bypeek-privacy-en.pdf | %PDF
 https://mariodigital.eu/downloads/mariodigital-privacy-it.pdf | %PDF
 https://mariodigital.eu/downloads/bypeek-privacy-de.pdf | %PDF
+>http://mariodigital.eu/ | https://mariodigital.eu/
+>http://www.mariodigital.eu/ | https://
+>https://www.mariodigital.eu/ | https://mariodigital.eu/
+>https://www.mariodigital.eu/pinline/nl/ | https://mariodigital.eu/pinline/nl/
+>https://mariodigital.eu/pinline/privacy/nl/ | https://mariodigital.eu/pinline/privacy/#nl

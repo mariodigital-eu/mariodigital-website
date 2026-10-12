@@ -21,6 +21,12 @@ done
 # 2. Inhoudscontroles
 while IFS= read -r line; do
   case "$line" in ''|\#*) continue;; esac
+  if [[ "$line" == \>* ]]; then   # >url | verwacht doorstuuradres (301/302, zonder volgen)
+    url="$(echo "${line#>}" | sed 's/|.*//' | xargs)"; want="$(echo "${line#*|}" | xargs)"
+    hdr=$(curl -sS -o /dev/null --max-time 20 -A "$UA" -w '%{http_code} %{redirect_url}' "$url" 2>/dev/null)
+    if [[ "$hdr" =~ ^30[1278]\ $want ]]; then ok=$((ok+1)); add "OK   $url -> $hdr"; else bad=$((bad+1)); add "FOUT $url -> $hdr (verwacht doorsturen naar $want)"; fi
+    continue
+  fi
   if [[ "$line" == !* ]]; then
     url="${line#!}"; url="${url%% *}"
     fetch "$url"

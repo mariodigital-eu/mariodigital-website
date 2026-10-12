@@ -1,7 +1,7 @@
 """Maakt de downloadbare PDF's van de privacyverklaringen.
 Gebruik (vanuit de repo-map):  python3 tools/make-privacy-pdfs.py
 Resultaat: site/downloads/*.pdf  (draai opnieuw na elke tekstwijziging)."""
-import http.server, threading, functools, pathlib
+import http.server, threading, functools, pathlib, subprocess
 from playwright.sync_api import sync_playwright
 
 SITE = pathlib.Path(__file__).resolve().parent.parent / "site"
@@ -28,6 +28,7 @@ def main():
         b = p.chromium.launch()
         page = b.new_page(color_scheme="light")
         for path, keep, name in JOBS:
+            page.goto("about:blank")  # verse pagina, anders stapelen de verberg-stijlen op
             page.goto(base + path + "#" + keep, wait_until="networkidle")
             # alle talen staan op één pagina: toon alleen de gekozen taal
             page.add_style_tag(content=f"main > section:not(#{keep}){{display:none!important}}")
@@ -35,7 +36,11 @@ def main():
             page.emulate_media(media="print")
             page.pdf(path=str(OUT / name), format="A4", print_background=True,
                      margin={"top": "18mm", "bottom": "18mm", "left": "16mm", "right": "16mm"})
-            print("gemaakt:", name)
+            # controle: een PDF zonder tekst betekent dat de verkeerde taal verborgen is
+            words = len(subprocess.run(["pdftotext", str(OUT / name), "-"], capture_output=True, text=True).stdout.split())
+            if words < 100:
+                raise SystemExit(f"FOUT: {name} bevat maar {words} woorden")
+            print("gemaakt:", name, f"({words} woorden)")
         b.close()
     srv.shutdown()
 

@@ -20,3 +20,5 @@ https://mariodigital.eu/downloads/bypeek-privacy-de.pdf | %PDF
 >https://mariodigital.eu/pinline/privacy/nl/ | https://mariodigital.eu/pinline/privacy/#nl
 https://mariodigital.eu/pinline/privacy/ | Meer niet. Alles staat op je eigen computer
 https://mariodigital.eu/ | play.google.com/store/apps/details?id=eu.mariodigital.bypeek
+https://mariodigital.eu/ | https://apps.microsoft.com/detail/9P518KHPJSFW
+https://mariodigital.eu/pinline/nl/ | https://apps.microsoft.com/detail/9P518KHPJSFW

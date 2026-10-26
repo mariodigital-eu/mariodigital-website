@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ByPeek – Ihr Bybit Card-Guthaben mit einem Klick | MarioDigital</title>
+  <meta name="description" content="ByPeek zeigt das Guthaben Ihrer Bybit Card als Widget auf dem Startbildschirm. Ein Klick genügt, ohne die Bybit-App zu öffnen.">
+  <link rel="canonical" href="https://mariodigital.eu/bypeek/de/">
+  <link rel="alternate" hreflang="nl" href="https://mariodigital.eu/bypeek/nl/">
+  <link rel="alternate" hreflang="en" href="https://mariodigital.eu/bypeek/en/">
+  <link rel="alternate" hreflang="de" href="https://mariodigital.eu/bypeek/de/">
+  <link rel="alternate" hreflang="fr" href="https://mariodigital.eu/bypeek/fr/">
+  <link rel="alternate" hreflang="es" href="https://mariodigital.eu/bypeek/es/">
+  <link rel="alternate" hreflang="it" href="https://mariodigital.eu/bypeek/it/">
+  <link rel="alternate" hreflang="x-default" href="https://mariodigital.eu/bypeek/">
+  <link rel="icon" href="../bypeek-icon.svg" type="image/svg+xml">
+  <style>
+:root{--navy:#0B1B3A;--blue:#1696C8;--ink:#1F2937;--muted:#5A6475;--line:#E5E9F0;--soft:#F3F6FA;--red:#FF3B30}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+header.top img{height:20px;display:block}
+.langs{display:flex;flex-wrap:wrap;gap:6px;font-size:14px}
+.langs a{padding:3px 9px;border-radius:999px;text-decoration:none;color:var(--muted);border:1px solid var(--line)}
+.langs a[aria-current]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hero{display:flex;gap:18px;align-items:center;padding:34px 0 10px}
+.hero img{width:72px;height:72px;border-radius:16px;flex:none}
+.hero h1{margin:0;font-size:34px;line-height:1.15;color:var(--navy)}
+.hero p{margin:4px 0 0;color:var(--muted);font-size:17px}
+.intro{font-size:17px;margin:14px 0 8px}
+.demo{position:relative;margin:22px 0 8px;padding:18px 20px;background:var(--soft);border-radius:12px;color:#9AA3B2}
+.demo .cur{color:var(--ink);font-weight:600}
+.demo .pin{display:flex;align-items:center;margin:2px 0 4px}
+.demo .pin i{width:18px;height:18px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
+.demo .pin b{height:3px;background:var(--red);opacity:.9;flex:1;margin-left:-2px;border-radius:2px}
+nav.toc{margin:22px 0 4px;font-size:15px}
+nav.toc a{margin-right:14px;white-space:nowrap}
+section{padding:20px 0 6px;border-top:1px solid var(--line);margin-top:22px}
+section h2{margin:0 0 12px;color:var(--navy);font-size:22px}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{position:relative;padding-left:40px;margin:0 0 14px}
+ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+dl{margin:0}
+dt{font-weight:600;color:var(--navy);margin-top:14px}
+dd{margin:2px 0 0}
+footer{border-top:1px solid var(--line);margin-top:34px;padding:18px 0 34px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+footer img{height:16px}
+@media (max-width:560px){.hero{flex-direction:column;align-items:flex-start}.hero h1{font-size:28px}}
+
+.cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 6px}
+.badge{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;font-size:15px}
+.btn{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--navy);font-weight:600;font-size:15px}
+.btn:hover{border-color:var(--blue)}
+.feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:6px 0 0}
+.feat{background:var(--soft);border-radius:12px;padding:14px 16px}
+.feat h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
+.feat p{margin:0;font-size:15px}
+.note{background:#F4F8FF;border-radius:12px;padding:14px 16px}
+.updated{color:var(--muted);font-size:14px;margin:4px 0 0}
+section h3{margin:16px 0 4px;font-size:17px;color:var(--navy)}
+section p{margin:4px 0 8px}
+section ul{margin:4px 0 8px;padding-left:22px}
+
+.badge.ghost{background:#fff;color:var(--muted);border:1px dashed var(--line)}
+.widget{display:flex;align-items:center;gap:16px;max-width:420px;margin:22px 0 8px;padding:18px;border-radius:22px;background:linear-gradient(180deg,#1B2A55,#0B1430);color:#fff}
+.widget .card{width:132px;height:80px;border-radius:10px;background:linear-gradient(135deg,#1E3A8A,#0B1B3A);border:1px solid #3B5BA5;position:relative;flex:none}
+.widget .card i{position:absolute;left:12px;top:12px;width:24px;height:17px;border-radius:4px;background:#E0B860}
+.widget b{font-size:24px;letter-spacing:2px}
+.widget small{display:block;color:#C7D2E8;font-size:14px;margin-top:6px}
+.hero img{border-radius:16px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="https://mariodigital.eu/" aria-label="MarioDigital"><img src="../mariodigital.png" alt="MarioDigital"></a>
+  <nav class="langs" aria-label="Sprache"><a href="../nl/" lang="nl" hreflang="nl">Nederlands</a> <a href="../en/" lang="en" hreflang="en">English</a> <a href="../de/" lang="de" hreflang="de" aria-current="page">Deutsch</a> <a href="../fr/" lang="fr" hreflang="fr">Français</a> <a href="../es/" lang="es" hreflang="es">Español</a> <a href="../it/" lang="it" hreflang="it">Italiano</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <img src="../bypeek-icon.svg" alt="" width="72" height="72">
+    <div><h1>ByPeek</h1><p>Ihr Bybit Card-Guthaben mit einem Klick</p></div>
+  </div>
+  <p class="intro">Sie stehen an der Kasse und möchten wissen, ob genug auf Ihrer Bybit Card ist? ByPeek zeigt Ihr Guthaben als Widget auf dem Startbildschirm. Ein Klick genügt, ohne die Bybit-App zu öffnen und ohne Anmeldung.</p>
+  <div class="cta">
+    <a class="badge" href="https://play.google.com/store/apps/details?id=eu.mariodigital.bypeek" rel="noopener" style="text-decoration:none">Bei Google Play herunterladen &#8599;</a>
+    <span class="badge ghost">iPhone: bald im App Store</span>
+    <a class="btn" href="../privacy/#de">Datenschutz</a>
+  </div>
+  <div class="widget" aria-hidden="true"><div class="card"><i></i></div><div><b>€ ••••</b><small>Klicken, um das Guthaben zu sehen</small></div></div>
+  <section><h2>Warum ByPeek?</h2><p>Die Bybit-App öffnen, sich anmelden und das Kartenguthaben suchen kostet Zeit, und die haben Sie an der Kasse nicht. ByPeek zeigt das verfügbare Guthaben Ihrer Karte direkt auf dem Startbildschirm. Nach ein paar Sekunden blendet es den Betrag von selbst wieder aus.</p></section>
+  <section><h2>Was ByPeek kann</h2><div class="feats"><div class="feat"><h3>Widget auf dem Startbildschirm</h3><p>Klein, mittel, groß oder verspielt. Klicken, um das Guthaben zu sehen; nach 10 Sekunden wird es wieder ausgeblendet.</p></div><div class="feat"><h3>Benachrichtigung bei Zahlungen</h3><p>Auf Wunsch eine Benachrichtigung nach einer Zahlung oder Einzahlung, ohne dass ByPeek sieht, bei wem.</p></div><div class="feat"><h3>Warnung bei niedrigem Guthaben</h3><p>Betrag und Widget-Rand werden orange, wenn Sie Ihre eigene Grenze unterschreiten.</p></div><div class="feat"><h3>Familie schaut mit</h3><p>Teilen Sie das Guthaben kostenlos per QR-Code mit Familienmitgliedern.</p></div><div class="feat"><h3>Bybit und Bybit EU</h3><p>Funktioniert mit beiden und mit den Coins, die Ihre Karte nutzt (EUR, USDC, USDT, BTC und mehr).</p></div><div class="feat"><h3>Erst die Demo testen</h3><p>Ohne Bybit-Konto sehen, wie es funktioniert.</p></div></div></section>
+  <section><h2>Sicher und privat</h2><p class="note">ByPeek nutzt nur einen Nur-Lese-API-Schlüssel, den Sie selbst bei Bybit erstellen. Damit kann ByPeek niemals handeln oder Geld abheben. Ihr Schlüssel bleibt auf Ihrem Telefon. Kein Konto, kein Server, keine Werbung, kein Tracking. <a href="../privacy/#de">Datenschutz →</a></p></section>
+  <section><h2>Preis</h2><p>7 Tage kostenlos testen, danach einmal bezahlen. Kein Abo. Kaufen Sie während der Testwoche, zahlen Sie 3,99 €; danach 5,99 €.</p><p><a href="../kaart/">Noch keine Bybit Card? (Einladungslink) →</a></p></section>
+  <section><h2>Systemvoraussetzungen</h2><p>Android 7 oder neuer oder iPhone mit iOS 16 oder neuer. Verfügbar auf Niederländisch, Englisch, Deutsch, Französisch, Spanisch und Italienisch.</p><p class="updated">ByPeek ist eine unabhängige App und kein offizielles Produkt von Bybit.</p></section>
+</main>
+<footer><div class="wrap">
+  <span>ByPeek von</span><a href="https://mariodigital.eu/"><img src="../mariodigital.png" alt="MarioDigital"></a>
+  <span>·</span><a href="../de/">ByPeek</a>
+  <span>·</span><a href="../privacy/#de">Datenschutz</a>
+</div></footer>
+</body>
+</html>
